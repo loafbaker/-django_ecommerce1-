@@ -8,5 +8,5 @@ def home(request):
     else:
         context = {"username_is": "unknown"}
 
-    template = "base.html"
+    template = "products/home.html"
     return render(request, template, context)
