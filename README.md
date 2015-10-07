@@ -1,5 +1,5 @@
-# django_ecommerce1
-===================
+django_ecommerce1
+=================
 
 A typical eCommerce site built by django framework
 
