@@ -42,9 +42,19 @@
 
     {% include 'navbar.html' %}
 
-    {% block content %}
+
+    {% block jumbotron %}
 
     {% endblock %}
+
+
+    <div class="container">
+
+      {% block content %}
+
+      {% endblock %}
+
+    </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
