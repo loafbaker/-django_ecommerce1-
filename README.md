@@ -28,3 +28,5 @@ Ver.10	[Products on the Homepage](../../tree/8f2c6710eea8aefb94b4e65a9c0961148eb
 Ver.11	[Unique Slugs for Products](../../tree/3089e202f8384a63562140c8ce954f4fa84ae44e)
 
 Ver.12	[URL Patterns for Slugs](../../tree/c4f7608313b2dff4ebfa3c20f5baeaaba8cf11a0)
+
+Ver.13	[Get Absolute URL](../../tree/04c226db39ddaad15041eef778dc4a055d048db6)

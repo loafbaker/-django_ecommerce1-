@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block head_title %}
 Welcome to 
 {% endblock %}
@@ -46,19 +48,25 @@ Welcome to
 
     <div class="col-sm-4">
 
-    {% for item in product.productimage_set.all %} 
+      <div class="thumbnail">
 
-      {% if item.featured %}
 
-      <img src="{{ MEDIA_URL }}{{ item.image }}" />
+        {% if product.productimage_set.all %}
+          {% for item in product.productimage_set.all %} 
+            {% if item.featured %}
+              <img class="img-responsive" src="{{ MEDIA_URL }}{{ item.image }}" />
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <img class="img-responsive" src="{% static 'img/placeholder.svg' %}" />
+        {% endif %}
 
-      {% endif %}
-
-    {% endfor %}
-
-    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-    {{ product.price }}
-    
+        <div class="caption">
+          <h3><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h3>
+          <p>{{ product.description|truncatewords:20 }}</p>
+          <p><a href="{{ product.get_absolute_url }}" class="btn btn-primary" role="button">View</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        </div>
+      </div>
 
     </div>
 

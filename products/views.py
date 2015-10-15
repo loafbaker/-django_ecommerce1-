@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from .models import Product
+from .models import Product, ProductImage
 
 def home(request):
     products = Product.objects.all()
@@ -20,7 +20,9 @@ def all(request):
 def single(request, slug):
     try:
         product = Product.objects.get(slug=slug)
-        context = {"product": product}
+        #images = product.productimage_set.all()
+        images = ProductImage.objects.filter(product=product)
+        context = {"product": product, "images": images}
         template = "products/single.html"
         return render(request, template, context)
     except:
