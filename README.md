@@ -36,3 +36,5 @@ Ver.14	[Bootstrap Images Part 1](../../tree/2258c0a4a56ad5b6b11eb2ea94839c9aea60
 Ver.15	[Product Search](../../tree/852d2e3fc77cdf16cfce43644bd97e4bd07edfb2)
 
 Ver.16	[Product Page Part 1](../../tree/ea2fb39d0651b183350db7e7a65a3750c8ec68c6)
+
+Ver.17	[Update Cart](../../tree/4d26b4569f9eed43dd81f6fca63dcd07540b0ef5)
