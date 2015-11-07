@@ -46,3 +46,5 @@ Ver.19	[Django Sessions](../../tree/2d081245747f786791c7db42a1049050552d4595)
 Ver.20	[Cart Count in Navbar](../../tree/1dbaaa25a789ba306aedeff7f8fccfc3481d10da)
 
 Ver.21	[Cart Item](../../tree/ffa376680bd76e260c5a36fbd85c6ab03214eabb)
+
+Ver.22	[Unique Cart Items](../../tree/c260f56e2808f2cf58ac3866abfbe2b57b5b1c04)
