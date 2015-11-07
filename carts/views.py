@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 
 # Create your views here.
 from products.models import Product
-from .models import Cart
+from .models import Cart, CartItem
 from decimal import Decimal
 
 def view(request):
@@ -44,17 +44,23 @@ def update_cart(request, slug):
     except:
         pass
 
-    if not product in cart.products.all():
-        cart.products.add(product)
+    cart_item, created = CartItem.objects.get_or_create(product=product)
+    if created:
+       print "yeah"
+
+
+    if not cart_item in cart.items.all():
+        cart.items.add(cart_item)
     else:
-        cart.products.remove(product)
+        cart.items.remove(cart_item)
 
     new_total = 0.00
-    for item in cart.products.all():
-        new_total += float(item.price)
+    for item in cart.items.all():
+        line_total = float(item.product.price) * item.quantity
+        new_total += line_total
     
-    request.session['items_total'] = cart.products.count()
-    cart.total = str(new_total)
+    request.session['items_total'] = cart.items.count()
+    cart.total = Decimal(str(new_total))
     cart.save()
 
     return HttpResponseRedirect(reverse("cart"))
