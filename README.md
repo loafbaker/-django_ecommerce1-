@@ -37,4 +37,6 @@ Ver.15	[Product Search](../../tree/852d2e3fc77cdf16cfce43644bd97e4bd07edfb2)
 
 Ver.16	[Product Page Part 1](../../tree/ea2fb39d0651b183350db7e7a65a3750c8ec68c6)
 
-Ver.17	[Update Cart](../../tree/4d26b4569f9eed43dd81f6fca63dcd07540b0ef5)
+Ver.17	[Cart App](../../tree/4d26b4569f9eed43dd81f6fca63dcd07540b0ef5)
+
+Ver.18	[Update Cart](../../tree/9be3e72be7cec56dde0f794428082c496cb2d53b)

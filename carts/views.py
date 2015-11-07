@@ -4,15 +4,39 @@ from django.core.urlresolvers import reverse
 # Create your views here.
 from products.models import Product
 from .models import Cart
+from decimal import Decimal
 
 def view(request):
-    cart = Cart.objects.all()[0]
-    context = {"cart": cart}
+    try:
+        the_id = request.session['cart_id'] 
+    except:
+        the_id = None
+    if the_id:
+        cart = Cart.objects.get(id=the_id)
+        context = {"cart": cart}
+    else:
+        empty_message = "Your Cart is Empty, please keep shopping."
+        context = {"empty": True, "empty_message": empty_message}
     template = "carts/view.html"
     return render(request, template, context)
 
 def update_cart(request, slug):
-    cart = Cart.objects.all()[0]
+    request.session.set_expiry(120000)
+    try:
+        the_id = request.session['cart_id'] 
+    except:
+        new_cart = Cart()
+
+        # for python 2.6
+        # solve the error: "Cannot convert float to Decimal.  First convert the float to a string"
+        new_cart.total = Decimal(str(new_cart.total))
+
+        new_cart.save()
+        request.session['cart_id'] = new_cart.id
+        the_id = new_cart.id
+
+    cart = Cart.objects.get(id=the_id)
+
     try:
         product = Product.objects.get(slug=slug)
     except Product.DoesNotExist:
@@ -28,7 +52,8 @@ def update_cart(request, slug):
     new_total = 0.00
     for item in cart.products.all():
         new_total += float(item.price)
-
+    
+    request.session['items_total'] = cart.products.count()
     cart.total = str(new_total)
     cart.save()
 
