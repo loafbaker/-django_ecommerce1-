@@ -26,11 +26,6 @@ def update_cart(request, slug):
         the_id = request.session['cart_id'] 
     except:
         new_cart = Cart()
-
-        # for python 2.6
-        # solve the error: "Cannot convert float to Decimal.  First convert the float to a string"
-        new_cart.total = Decimal(str(new_cart.total))
-
         new_cart.save()
         request.session['cart_id'] = new_cart.id
         the_id = new_cart.id
@@ -44,22 +39,21 @@ def update_cart(request, slug):
     except:
         pass
 
-    cart_item, created = CartItem.objects.get_or_create(product=product)
+    cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
     if created:
        print "yeah"
 
-
-    if not cart_item in cart.items.all():
-        cart.items.add(cart_item)
-    else:
-        cart.items.remove(cart_item)
+    # if not cart_item in cart.items.all():
+    #     cart.items.add(cart_item)
+    # else:
+    #     cart.items.remove(cart_item)
 
     new_total = 0.00
-    for item in cart.items.all():
+    for item in cart.cartitem_set.all():
         line_total = float(item.product.price) * item.quantity
         new_total += line_total
     
-    request.session['items_total'] = cart.items.count()
+    request.session['items_total'] = cart.cartitem_set.count()
     cart.total = Decimal(str(new_total))
     cart.save()
 
