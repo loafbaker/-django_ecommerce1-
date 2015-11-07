@@ -48,3 +48,5 @@ Ver.20	[Cart Count in Navbar](../../tree/1dbaaa25a789ba306aedeff7f8fccfc3481d10d
 Ver.21	[Cart Item](../../tree/ffa376680bd76e260c5a36fbd85c6ab03214eabb)
 
 Ver.22	[Unique Cart Items](../../tree/c260f56e2808f2cf58ac3866abfbe2b57b5b1c04)
+
+Ver.23	[Qty & Attr](../../tree/3a3badf04b6e89a85c3cbb26e6ab2c4c079162be)

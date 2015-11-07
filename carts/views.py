@@ -30,10 +30,18 @@ def update_cart(request, slug):
         qty = None
         update_qty = False
 
+    notes = {}
     try:
-        attr = request.GET.get('attr')
+        color = request.GET.get('color')
+        notes['color'] = color
     except:
-        attr = None
+        color = None
+
+    try:
+        size = request.GET.get('size')
+        notes['size'] = size
+    except:
+        size = None
 
     try:
         the_id = request.session['cart_id'] 
@@ -57,10 +65,11 @@ def update_cart(request, slug):
        print "yeah"
 
     if update_qty and qty:
-        if int(qty) == 0:
+        if int(qty) <= 0:
            cart_item.delete()
         else:
            cart_item.quantity = qty
+           cart_item.notes = notes
            cart_item.save()
 
     # if not cart_item in cart.items.all():
