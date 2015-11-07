@@ -40,3 +40,5 @@ Ver.16	[Product Page Part 1](../../tree/ea2fb39d0651b183350db7e7a65a3750c8ec68c6
 Ver.17	[Cart App](../../tree/4d26b4569f9eed43dd81f6fca63dcd07540b0ef5)
 
 Ver.18	[Update Cart](../../tree/9be3e72be7cec56dde0f794428082c496cb2d53b)
+
+Ver.19	[Django Sessions](../../tree/2d081245747f786791c7db42a1049050552d4595)
