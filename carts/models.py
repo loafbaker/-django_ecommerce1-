@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from products.models import Product
+from products.models import Product, Variation
 # for python 2.6
 # To solve the error: "Cannot convert float to Decimal.  First convert the float to a string"
 # The Decimal field "0.00" need to be replaced by "Decimal(str(0.00))"
@@ -10,6 +10,7 @@ from decimal import Decimal
 class CartItem(models.Model):
     cart = models.ForeignKey('Cart', null=True, blank=True)
     product = models.ForeignKey(Product, null=True, blank=True)
+    variations = models.ManyToManyField(Variation, null=True, blank=True)
     quantity = models.IntegerField(default=1)
     notes = models.TextField(null=True, blank=True)
     line_total = models.DecimalField(default=Decimal(str(10.99)), max_digits=1000, decimal_places=2) # Python 2.6 do not support Decimal
