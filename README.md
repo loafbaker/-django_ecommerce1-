@@ -58,3 +58,5 @@ Ver.25	[Product Variations](../../tree/b9934d3522b5262ffb9eb0a2a35aa82689dbeb96)
 Ver.26	[Product Variations Part 2](../../tree/b735488a1ee6cac491a2d5863e0811661cf69268)
 
 Ver.27	[Product Variations Part 3](../../tree/52eb4e488440b4ac9388a4a62c915eae22c1f352)
+
+Ver.28	[Remove from Cart](../../tree/0a3d24c98307e3248c084c8fa7deac06080413f0)
