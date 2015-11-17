@@ -54,3 +54,5 @@ Ver.23	[Qty & Attr](../../tree/3a3badf04b6e89a85c3cbb26e6ab2c4c079162be)
 Ver.24	[Cart Item Notes](../../tree/a97357950676f399fda6afef04884ee377b6267e)
 
 Ver.25	[Product Variations](../../tree/b9934d3522b5262ffb9eb0a2a35aa82689dbeb96)
+
+Ver.26	[Product Variations Part 2](../../tree/b735488a1ee6cac491a2d5863e0811661cf69268)
