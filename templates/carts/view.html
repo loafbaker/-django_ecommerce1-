@@ -32,7 +32,7 @@
     <td>{{ item.product }} {% if item.variations.all %} <ul>{% for subitem in item.variations.all %}<li>{{ subitem.category|capfirst }} : {{ subitem.title|capfirst }}</li>{% endfor %}</ul> {% endif %}</td>
     <td>{{ item.product.price }}</td>
     <td>{{ item.quantity }}</td>
-    <td><a href="#">Remove</a></td>
+    <td><a href="{% url "remove_from_cart" item.id %}">Remove</a></td>
   </tr>
 
 {% endfor %}
