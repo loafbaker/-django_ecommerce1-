@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-import time
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from carts.models import Cart
@@ -13,6 +13,7 @@ def orders(request):
     return render(request, template, context)
 
 # require user login
+@login_required
 def checkout(request):
 
     try:
@@ -22,15 +23,18 @@ def checkout(request):
         the_id = None
         return HttpResponseRedirect(reverse("cart"))
 
-
-    new_order, created = Order.objects.get_or_create(cart=cart)
-    if created:
-        # assign a user to the order
-        new_order.order_id = id_generator() # str(time.time())
+    try:
+        new_order = Order.objects.get(cart=cart)
+    except Order.DoesNotExist:
+        new_order = Order()
+        new_order.cart = cart
+        new_order.user = request.user
+        new_order.order_id = id_generator()
         new_order.save()
+    except:
+        # work on some error messages
+        return HttpResponseRedirect(reverse("cart"))
 
-    new_order.user = request.user
-    new_order.save()
     # assign an address
     # run credit card
     if new_order.status == 'Finished':
