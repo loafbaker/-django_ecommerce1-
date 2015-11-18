@@ -26,7 +26,6 @@ def registration_view(request):
     form = RegistrationForm(request.POST or None)
 
     if form.is_valid():
-        print 'is valid'
         new_user = form.save(commit=False)
         new_user.save()
         # username = form.cleaned_data['username']
