@@ -70,3 +70,5 @@ Ver.31	[Checkout Part 1](../../tree/d6b10dec6da295dafedd2f67519ed76fea3e100e)
 Ver.32	[All Products Page](../../tree/283ca6edeb7e342e0f91fab21815ef7a21682ed3)
 
 Ver.33	[Update Order Model](../../tree/322332c94dd15fe55dec8ae5d993b23ab94399e7)
+
+Ver.34	[Login Required Checkout](../../tree/042c2c789c4df2dbe62ff59cd87448f5114f500d)
