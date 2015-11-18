@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/logout/&', 'accounts.views.logout_view', name='auth_logout'),
 )
 
 if settings.DEBUG:
