@@ -92,3 +92,5 @@ Ver.42	[Email Confirmed & Activation Method](../../tree/5f57bcc8ffdd49d224dfcf60
 Ver.43	[Setup Email Ability](../../tree/23e047c5250edfab5cd881472838512c625c9ad9)
 
 Ver.44	[Test Email](../../tree/ba83161abff305b88bbfe94cbf90828f3b5ca34d)
+
+Ver.45	[Activation Hash](../../tree/0af14e7e0406517cd3a2b1d226b932711e3514ea)
