@@ -31,9 +31,9 @@ DEFAULT_FROM_EMAIL = 'Jianming Chen <loafbaker@hotmail.com>'
 
 # Email Utility
 EMAIL_HOST = 'smtp.live.com'  # 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'loafbaker@hotmail.com'
-EMAIL_HOST_PASSWORD = 'password'
-EMAIL_POT = 465 # default: 587
+EMAIL_HOST_USER = 'loafbaker@hotmail.com' # change to your own email address
+EMAIL_HOST_PASSWORD = 'yourownpassword' # change to your own password
+EMAIL_POT = 25 # default: 587
 EMAIL_USE_TLS = True
 
 # Application definition
