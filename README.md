@@ -94,3 +94,5 @@ Ver.43	[Setup Email Ability](../../tree/23e047c5250edfab5cd881472838512c625c9ad9
 Ver.44	[Test Email](../../tree/ba83161abff305b88bbfe94cbf90828f3b5ca34d)
 
 Ver.45	[Activation Hash](../../tree/0af14e7e0406517cd3a2b1d226b932711e3514ea)
+
+Ver.46	[Activation View](../../tree/68985d15b1c663fc63e942672078c38c2bc1c7fe)

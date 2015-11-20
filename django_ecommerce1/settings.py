@@ -36,6 +36,13 @@ EMAIL_HOST_PASSWORD = 'yourownpassword' # change to your own password
 EMAIL_POT = 25 # default: 587
 EMAIL_USE_TLS = True
 
+# Site settings
+if DEBUG:
+    SITE_URL = 'http://127.0.0.1:8000'
+else:
+    SITE_URL = 'http://cfestore.com'
+
+
 # Application definition
 
 INSTALLED_APPS = (
