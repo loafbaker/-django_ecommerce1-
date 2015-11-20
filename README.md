@@ -102,3 +102,5 @@ Ver.47	[Redirects](../../tree/7b99940d6d16bc1c2bd011489d2509ca4e8f97f9)
 Ver.48	[Bootstrap Alert Messages](../../tree/277e7f25b79272d8f96d7f5737973cb0103c19c7)
 
 Ver.49	[Django Messages](../../tree/167bffe16983921e14087aed748eb90c50268f29)
+
+Ver.50	[Marketing App](../../tree/435af134c60a30d6c4c8a308e98273b896768c21)
