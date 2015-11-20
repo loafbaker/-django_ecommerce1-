@@ -90,3 +90,5 @@ Ver.41	[Post Save Signal](../../tree/0211cfca8a2d23f5529e71573571a215ff5896bc)
 Ver.42	[Email Confirmed & Activation Method](../../tree/5f57bcc8ffdd49d224dfcf60820f944b4fd8a9d3)
 
 Ver.43	[Setup Email Ability](../../tree/23e047c5250edfab5cd881472838512c625c9ad9)
+
+Ver.44	[Test Email](../../tree/ba83161abff305b88bbfe94cbf90828f3b5ca34d)

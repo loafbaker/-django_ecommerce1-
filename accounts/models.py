@@ -20,7 +20,7 @@ class EmailConfirmed(models.Model):
     def __unicode__(self):
         return str(self.confirmed)
 
-    def active_user_email(self):
+    def activate_user_email(self):
         """
         send email here & render a string
         """
@@ -32,8 +32,8 @@ class EmailConfirmed(models.Model):
         }
         subject = 'Activate your email'
         message = render_to_string('accounts/activation_message.txt', context)
-        print message
-        # self.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
+        # print message
+        self.email_user(subject, message, settings.DEFAULT_FROM_EMAIL)
 
-    def email_user(self, subject, message, from_email=None, *kwargs):
-        send_mail(subject, message, from_email, [self.user.email], **kwargs)
+    def email_user(self, subject, message, from_email=None, **kwargs):
+        send_mail(subject, message, from_email, [self.user.email], kwargs)
