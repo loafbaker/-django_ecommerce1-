@@ -104,3 +104,5 @@ Ver.48	[Bootstrap Alert Messages](../../tree/277e7f25b79272d8f96d7f5737973cb0103
 Ver.49	[Django Messages](../../tree/167bffe16983921e14087aed748eb90c50268f29)
 
 Ver.50	[Marketing App](../../tree/435af134c60a30d6c4c8a308e98273b896768c21)
+
+Ver.51	[Middleware for Marketing Message](../../tree/18008d25a58ce5e043d53ac236b37879f3308e3d)
