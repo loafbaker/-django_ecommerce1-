@@ -26,6 +26,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_FROM_EMAIL = 'loafbaker@hotmail.com'
+
 
 # Application definition
 

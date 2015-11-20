@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.signals import user_logged_in
 from django.db.models.signals import post_save
 
-from .models import UserStripe
+from .models import UserStripe, EmailConfirmed
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -33,23 +33,23 @@ User = get_user_model()
 
 def get_create_stripe(user):
     new_user_stripe, created = UserStripe.objects.get_or_create(user=user)
-    try:
-        user.userstripe.stripe_id
-    except UserStripe.DoesNotExist:
+    if created:
         customer = stripe.Customer.create(
             email = str(user.email)
         )
-        new_user_stripe = UserStripe.objects.create(
-            user = user,
-            stripe_id = customer.id
-        )
-    except:
-        pass
+        new_user_stripe.stripe_id = customer.id
+        new_user_stripe.save()
 
 def user_created(sender, instance, created, *args, **kwargs):
     user = instance
     if created:
         get_create_stripe(user)
+        email_confirmed, email_is_created = EmailConfirmed.objects.get_or_create(user=user)
+        if email_is_created:
+            pass
+            #create hash
+            #send email
+            # user.emailconfirmed.email_user()
         #send our email
 
 
