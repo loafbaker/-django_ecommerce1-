@@ -82,3 +82,5 @@ Ver.37	[Login View](../../tree/a1a5c7482d2e6b54bba8c4bc9b9be964a556be89)
 Ver.38	[Form Validation](../../tree/ae39a89d96252163ec12fad664ff252a59a6ec52)
 
 Ver.39	[Registration Form](../../tree/6860bc31ed27e4f35bdb000eeec069bc3f3ad8a7)
+
+Ver.40	[Unique Email in Form](../../tree/3890d576fd7b019f18eedc79a055560c8f123233)
