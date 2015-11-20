@@ -86,3 +86,5 @@ Ver.39	[Registration Form](../../tree/6860bc31ed27e4f35bdb000eeec069bc3f3ad8a7)
 Ver.40	[Unique Email in Form](../../tree/3890d576fd7b019f18eedc79a055560c8f123233)
 
 Ver.41	[Post Save Signal](../../tree/0211cfca8a2d23f5529e71573571a215ff5896bc)
+
+Ver.42	[Email Confirmed & Activation Method](../../tree/5f57bcc8ffdd49d224dfcf60820f944b4fd8a9d3)
