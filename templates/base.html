@@ -23,6 +23,15 @@
     <link href="{% static 'css/navbar-static-top.css' %}" rel="stylesheet">
 
     <style>
+      .alert-top-message {
+        margin-bottom: 0;
+        border-radius: 0;
+        text-align: center;
+        background-color: #DBDBDB;
+      }
+      .alert-top-message h3 {
+        margin: 0 auto;
+      }
       {% block head_styles %}
       {% endblock %}
 
@@ -48,6 +57,12 @@
   </head>
 
   <body>
+    <div class="alert alert-dismissible alert-top-message" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="container">
+        <h3>Hello there</h3> 
+      </div>
+    </div>
 
     {% include 'navbar.html' %}
 
@@ -56,8 +71,13 @@
 
     {% endblock %}
 
-
     <div class="container">
+
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p>Hello there</p> 
+      </div>
+
 
       {% block content %}
 
