@@ -110,3 +110,5 @@ Ver.51	[Middleware for Marketing Message](../../tree/18008d25a58ce5e043d53ac236b
 Ver.52	[Custom Model Queryset and Model Manager](../../tree/6f9bf769726033550208d4ea76607b62a8331ff1)
 
 Ver.53	[Message Display Duration](../../tree/7871415764aa101d5ca462493d3b031addf7e156)
+
+Ver.54	[Django Timezone](../../tree/9b0d3afe820e47910f0816a0dfdc5d780344491b)
