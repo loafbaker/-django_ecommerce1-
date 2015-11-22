@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from marketing.models import MarketingMessage
+from marketing.models import MarketingMessage, Slider
 from .models import Product, ProductImage
 
 def search(request):
@@ -24,10 +24,12 @@ def search(request):
     return render(request, template, context)
 
 def home(request):
+    sliders = Slider.objects.all()
     products = Product.objects.all()
     template = "products/home.html"
     context = {
         'products': products,
+        'sliders': sliders,
     }
     return render(request, template, context)
 
