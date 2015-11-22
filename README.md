@@ -112,3 +112,5 @@ Ver.52	[Custom Model Queryset and Model Manager](../../tree/6f9bf769726033550208
 Ver.53	[Message Display Duration](../../tree/7871415764aa101d5ca462493d3b031addf7e156)
 
 Ver.54	[Django Timezone](../../tree/9b0d3afe820e47910f0816a0dfdc5d780344491b)
+
+Ver.55	[Ajax & Timezone Part 1](../../tree/e8c7cffc34b9a611988ac86a32d4f0395fc5ad77)
