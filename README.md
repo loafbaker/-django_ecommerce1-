@@ -114,3 +114,5 @@ Ver.53	[Message Display Duration](../../tree/7871415764aa101d5ca462493d3b031addf
 Ver.54	[Django Timezone](../../tree/9b0d3afe820e47910f0816a0dfdc5d780344491b)
 
 Ver.55	[Ajax & Timezone Part 1](../../tree/e8c7cffc34b9a611988ac86a32d4f0395fc5ad77)
+
+Ver.56	[Ajax & Timezone Part 2](../../tree/85d47d4965ca41857dd38cc837c7d77095abb93e)
