@@ -118,3 +118,5 @@ Ver.55	[Ajax & Timezone Part 1](../../tree/e8c7cffc34b9a611988ac86a32d4f0395fc5a
 Ver.56	[Ajax & Timezone Part 2](../../tree/85d47d4965ca41857dd38cc837c7d77095abb93e)
 
 Ver.57	[Bootstrap Carousel](../../tree/a1c45c17d216febe760c52d5895bf5e6a12a904d)
+
+Ver.58	[Marketing Slider](../../tree/f6079c51f68154b8294ad425b2a33b52c25d9bba)

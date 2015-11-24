@@ -24,7 +24,7 @@ def search(request):
     return render(request, template, context)
 
 def home(request):
-    sliders = Slider.objects.all()
+    sliders = Slider.objects.all_featured()
     products = Product.objects.all()
     template = "products/home.html"
     context = {
