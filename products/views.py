@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+from marketing.forms import EmailForm
 from marketing.models import MarketingMessage, Slider
 from .models import Product, ProductImage
 

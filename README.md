@@ -122,3 +122,5 @@ Ver.57	[Bootstrap Carousel](../../tree/a1c45c17d216febe760c52d5895bf5e6a12a904d)
 Ver.58	[Marketing Slider](../../tree/f6079c51f68154b8294ad425b2a33b52c25d9bba)
 
 Ver.59	[Featured Sliders & Slider Links](../../tree/8156ca31b9a7580d747267916e6a3142736cdb03)
+
+Ver.60	[Add Form to Modal](../../tree/ddb604329e8ec6d370f18abbe8fb7c8dbb8da0b2)
