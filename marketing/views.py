@@ -8,6 +8,7 @@ from django.utils import timezone
 
 # Create your views here.
 from .forms import EmailForm
+from accounts.models import EmailMarketingSignUp
 
 def dismiss_marketing_message(request):
     if request.is_ajax():
@@ -28,6 +29,7 @@ def email_signup(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
+            new_signup, created = EmailMarketingSignUp.objects.get_or_create(email=email)
             request.session['email_added_marketing'] = True
             return HttpResponse('Success %s' % (email))
         if form.errors:

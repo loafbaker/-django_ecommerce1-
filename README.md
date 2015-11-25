@@ -126,3 +126,5 @@ Ver.59	[Featured Sliders & Slider Links](../../tree/8156ca31b9a7580d747267916e6a
 Ver.60	[Bootstrap Modal](../../tree/1696b2946e9219c569f72da533d3e73c995980fd)
 
 Ver.61	[Add Form to Modal](../../tree/ddb604329e8ec6d370f18abbe8fb7c8dbb8da0b2)
+
+Ver.62	[Ajax Email Sign Ups](../../tree/dc841c9954f8b912c0512afadd8b10e87e56632a)
