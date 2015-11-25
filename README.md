@@ -123,4 +123,6 @@ Ver.58	[Marketing Slider](../../tree/f6079c51f68154b8294ad425b2a33b52c25d9bba)
 
 Ver.59	[Featured Sliders & Slider Links](../../tree/8156ca31b9a7580d747267916e6a3142736cdb03)
 
-Ver.60	[Add Form to Modal](../../tree/ddb604329e8ec6d370f18abbe8fb7c8dbb8da0b2)
+Ver.60	[Bootstrap Modal](../../tree/1696b2946e9219c569f72da533d3e73c995980fd)
+
+Ver.61	[Add Form to Modal](../../tree/ddb604329e8ec6d370f18abbe8fb7c8dbb8da0b2)

@@ -3,6 +3,7 @@ import datetime
 
 from django.conf import settings
 from django.shortcuts import render, HttpResponse, Http404
+from django.http import HttpResponseBadRequest
 from django.utils import timezone
 
 # Create your views here.
@@ -27,10 +28,10 @@ def email_signup(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
+            request.session['email_added_marketing'] = True
             return HttpResponse('Success %s' % (email))
         if form.errors:
-            print form.errors
             json_data = json.dumps(form.errors)
-            return HttpResponse(json_data, content_type='application/json')
+            return HttpResponseBadRequest(json_data, content_type='application/json')
     else:
         return Http404
