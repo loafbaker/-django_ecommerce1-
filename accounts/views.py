@@ -6,7 +6,7 @@ import re
 
 # Create your views here.
 from .forms import LoginForm, RegistrationForm, UserAddressForm
-from .models import EmailConfirmed
+from .models import EmailConfirmed, UserDefaultAddress
 
 def logout_view(request):
     logout(request)
@@ -93,6 +93,12 @@ def add_user_address(request):
             new_address = form.save(commit=False)
             new_address.user = request.user
             new_address.save()
+            is_default = form.cleaned_data['default']
+            if is_default:
+                default_address, created = UserDefaultAddress.objects.get_or_create(user=request.user)
+                default_address.shipping = new_address
+                default_address.save()
+
             if next_page is not None:
                 return HttpResponseRedirect(reverse(str(next_page)) + "?address_added=True")
     else:

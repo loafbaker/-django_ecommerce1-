@@ -7,6 +7,16 @@ from django.template.loader import render_to_string
 # Create your models here.
 from localflavor.us.us_states import US_STATES
 
+class UserDefaultAddress(models.Model):
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    shipping = models.ForeignKey('UserAddress', null=True, \
+        blank=True, related_name='user_address_shipping_default')
+    billing = models.ForeignKey('UserAddress', null=True, \
+        blank=True, related_name='user_address_billing_default')
+
+    def __unicode(self):
+        return str(self.user.username)
+
 class UserAddressManager(models.Manager):
     def get_billing_address(self, user):
         return super(UserAddressManager, self).filter(billing=True).filter(user=user)
@@ -32,6 +42,9 @@ class UserAddress(models.Model):
 
     def get_address(self):
         return "%s, %s, %s, %s, %s" % (self.address, self.city, self.state, self.country, self.zipcode)
+
+    class Meta:
+        ordering = ['-updated', '-timestamp']
 
 class UserStripe(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
