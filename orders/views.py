@@ -38,11 +38,16 @@ def checkout(request):
         return HttpResponseRedirect(reverse("cart"))
 
 
-    address_form = UserAddressForm(request.POST or None)
-    if address_form.is_valid():
-        new_address = address_form.save(commit=False)
-        new_address.user = request.user
-        new_address.save()
+    address_form = UserAddressForm()
+    try:
+        address_added = request.GET.get('address_added')
+    except:
+        address_added = None
+
+    if address_added is None:
+       address_form = UserAddressForm()   
+    else:
+       address_form = None
     # assign an address
     # run credit card
     if new_order.status == 'Finished':

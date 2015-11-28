@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse
 import re
 
 # Create your views here.
-from .forms import LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm, UserAddressForm
 from .models import EmailConfirmed
 
 def logout_view(request):
@@ -81,3 +81,19 @@ def activation_view(request, activation_key):
     else:
         raise Http404
 
+
+def add_user_address(request):
+    try:
+        next_page = request.GET.get("next")
+    except:
+        next_page = None
+    if request.method == "POST":
+        form = UserAddressForm(request.POST)
+        if form.is_valid():
+            new_address = form.save(commit=False)
+            new_address.user = request.user
+            new_address.save()
+            if next_page is not None:
+                return HttpResponseRedirect(reverse(str(next_page)) + "?address_added=True")
+    else:
+        raise Http404
