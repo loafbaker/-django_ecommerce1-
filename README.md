@@ -132,3 +132,5 @@ Ver.62	[Ajax Email Sign Ups](../../tree/dc841c9954f8b912c0512afadd8b10e87e56632a
 Ver.63	[Store Email Marketing Sign Ups](../../tree/0d8bb2689b06034e7096de1fa1fa0d525fb1eb7c)
 
 Ver.64	[Checkout: Address Model](../../tree/ee06384550fece6cba634de9a4a5611ae29cf402)
+
+Ver.65	[Checkout: Address View](../../tree/e9cca7e10ca604d71d05d0a0dea33df925d2af05)

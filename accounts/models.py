@@ -7,6 +7,10 @@ from django.template.loader import render_to_string
 # Create your models here.
 from localflavor.us.us_states import US_STATES
 
+class UserAddressManager(models.Manager):
+    def get_billing_address(self, user):
+        return super(UserAddressManager, self).filter(billing=True).filter(user=user)
+
 class UserAddress(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
     address = models.CharField(max_length=120)
@@ -21,8 +25,13 @@ class UserAddress(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
+    objects = UserAddressManager()
+
     def __unicode__(self):
         return str(self.user.username)
+
+    def get_address(self):
+        return "%s, %s, %s, %s, %s" % (self.address, self.city, self.state, self.country, self.zipcode)
 
 class UserStripe(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL)
