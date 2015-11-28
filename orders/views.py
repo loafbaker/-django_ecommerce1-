@@ -3,6 +3,8 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+from accounts.models import UserAddress
+from accounts.forms import UserAddressForm
 from carts.models import Cart
 from .models import Order
 from .utils import id_generator
@@ -35,6 +37,12 @@ def checkout(request):
         # work on some error messages
         return HttpResponseRedirect(reverse("cart"))
 
+
+    address_form = UserAddressForm(request.POST or None)
+    if address_form.is_valid():
+        new_address = address_form.save(commit=False)
+        new_address.user = request.user
+        new_address.save()
     # assign an address
     # run credit card
     if new_order.status == 'Finished':
@@ -43,6 +51,6 @@ def checkout(request):
         del request.session['items_total']
         return HttpResponseRedirect(reverse("cart"))
 
-    context = {}
-    template = "products/home.html"
+    context = {'address_form': address_form}
+    template = "orders/checkout.html"
     return render(request, template, context)

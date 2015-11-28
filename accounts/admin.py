@@ -1,8 +1,14 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import UserStripe, EmailConfirmed, EmailMarketingSignUp
+from .models import UserAddress, UserStripe, EmailConfirmed, EmailMarketingSignUp
 
+class UserAddressAdmin(admin.ModelAdmin):
+    class Meta:
+        model = UserAddress
+
+
+admin.site.register(UserAddress, UserAddressAdmin)
 admin.site.register(UserStripe)
 admin.site.register(EmailConfirmed)
 
