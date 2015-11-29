@@ -105,6 +105,8 @@ MARKETING_MINUTES_OFFSET = 0
 
 MARKETING_SECONDS_OFFSET = 0
 
+DEFAULT_TAX_RATE = 0.08
+
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",

@@ -12,6 +12,13 @@ STATUS_CHOICES = (
     ('Finished', 'Finished'),
 )
 
+
+try:
+    tax_rate = settings.DEFAULT_TAX_RATE
+except Exception, e:
+    raise NotImplementedError(str(e))
+
+
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
     order_id = models.CharField(max_length=120, default='ABC', unique=True)
@@ -28,7 +35,9 @@ class Order(models.Model):
         return self.order_id
 
     def get_final_amount(self):
-        self.tax_total = Decimal(str(0.08)) * self.sub_total
+        two_places = Decimal(10)==-2
+        tax_rate_dec = Decimal(str(tax_rate))
+        self.tax_total = Decimal(tax_rate_dec * self.sub_total).quantize(two_places)
         self.final_total = self.sub_total + self.tax_total
         self.save()
         return self.final_total
