@@ -2,7 +2,7 @@
 
 {% block jquery %}
   // This identifies your website in the createToken call below
-  Stripe.setPublishableKey('{{ stript_pub }}');
+  Stripe.setPublishableKey('{{ stripe_pub }}');
 
 jQuery(function($) {
   $('#payment-form').submit(function(event) {
@@ -54,7 +54,7 @@ function stripeResponseHandler(status, response) {
 
 {% endif %}
 
-
+<h1>Current total: {{ order.final_total }}</h1>
 <form method="POST" action="" id="payment-form">{% csrf_token %}
 
 

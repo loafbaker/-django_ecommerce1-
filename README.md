@@ -138,3 +138,5 @@ Ver.65	[Checkout: Address View](../../tree/e9cca7e10ca604d71d05d0a0dea33df925d2a
 Ver.66	[Checkout: Selecting Address](../../tree/0c02d298277ddd32fd00964bce09e77780d973cd)
 
 Ver.67	[Checkout: User Default Address](../../tree/54453b2e41be4259d5ffc0bc724798312eab0b86)
+
+Ver.68	[Stripe Payment Form](../../tree/652d03dabf96bae24f80ea1066ec0d8ccdb048f5)
