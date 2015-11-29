@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.core.urlresolvers import reverse
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -8,6 +9,11 @@ from accounts.forms import UserAddressForm
 from carts.models import Cart
 from .models import Order
 from .utils import id_generator
+
+try:
+    stript_pub = settings.STRIPE_PUBLISHABLE_KEY
+except Exception, e:
+    raise NotImplementedError(str(e))
 
 def orders(request):
     context = {}
@@ -63,6 +69,7 @@ def checkout(request):
         'address_form': address_form,
         'current_addresses': current_addresses,
         'billing_addresses': billing_addresses,
+        'stript_pub': stript_pub
     }
     template = "orders/checkout.html"
     return render(request, template, context)

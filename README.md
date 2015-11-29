@@ -136,3 +136,5 @@ Ver.64	[Checkout: Address Model](../../tree/ee06384550fece6cba634de9a4a5611ae29c
 Ver.65	[Checkout: Address View](../../tree/e9cca7e10ca604d71d05d0a0dea33df925d2af05)
 
 Ver.66	[Checkout: Selecting Address](../../tree/0c02d298277ddd32fd00964bce09e77780d973cd)
+
+Ver.67	[Checkout: User Default Address](../../tree/54453b2e41be4259d5ffc0bc724798312eab0b86)
