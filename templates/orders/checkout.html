@@ -54,7 +54,7 @@ function stripeResponseHandler(status, response) {
 
 {% endif %}
 
-<h1>Current total: {{ order.final_total }}</h1>
+<h1>Current total: {{ order.get_final_amount }}</h1>
 <form method="POST" action="" id="payment-form">{% csrf_token %}
 
 

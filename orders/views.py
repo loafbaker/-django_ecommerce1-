@@ -3,6 +3,7 @@ import stripe
 from django.shortcuts import render, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -45,9 +46,15 @@ def checkout(request):
         new_order.order_id = id_generator()
         new_order.save()
     except:
+        new_order = None
         # work on some error messages
         return HttpResponseRedirect(reverse("cart"))
 
+    final_amount = 0
+    if new_order is not None:
+        new_order.sub_total = cart.total
+        new_order.save()
+        final_amount = new_order.get_final_amount()
 
     address_form = UserAddressForm()
     try:
@@ -77,7 +84,7 @@ def checkout(request):
             token = request.POST['stripeToken']
             card = customer.sources.create(source=token)
             charge = stripe.Charge.create(
-                amount=int(new_order.final_total * 100),
+                amount=int(final_amount * 100),
                 currency="usd",
                 source=card, # obtained with Stripe.js
                 customer=customer,
@@ -86,13 +93,13 @@ def checkout(request):
             print card
             print charge
             if charge['captured']:
-                print 'charged'
-
-    if new_order.status == 'Finished':
-        # cart.delete()
-        del request.session['cart_id']
-        del request.session['items_total']
-        return HttpResponseRedirect(reverse("cart"))
+                new_order.status = 'Finished'
+                new_order.save()
+                # cart.delete()
+                del request.session['cart_id']
+                del request.session['items_total']
+                messages.success(request, 'Thank you for your order. Your order has been completed!')
+                return HttpResponseRedirect(reverse("user_orders"))
 
     context = {
         'order': new_order,

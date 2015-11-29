@@ -28,3 +28,9 @@ class Order(models.Model):
 
     def __unicode__(self):
         return self.order_id
+
+    def get_final_amount(self):
+        self.tax_total = Decimal(str(0.08)) * self.sub_total
+        self.final_total = self.sub_total + self.tax_total
+        self.save()
+        return self.final_total
