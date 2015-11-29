@@ -142,3 +142,5 @@ Ver.67	[Checkout: User Default Address](../../tree/54453b2e41be4259d5ffc0bc72479
 Ver.68	[Stripe Payment Form](../../tree/652d03dabf96bae24f80ea1066ec0d8ccdb048f5)
 
 Ver.69	[Stripe Charge](../../tree/d30154f2f5d50f847378a39258bdbc8841061780)
+
+Ver.70	[Order Total](../../tree/f412fd8eef27f36646d232dcf31b912b34f0cf72)
