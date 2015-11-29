@@ -81,8 +81,28 @@ def checkout(request):
             customer = None
 
         if customer is not None:
+            shipping_a = request.POST['shipping_address']
+            billing_a = request.POST['billing_address']
             token = request.POST['stripeToken']
+
+            try:
+                shipping_address_instance = UserAddress.objects.get(id=shipping_a)
+            except:
+                shipping_address_instance = None
+            try:
+                billing_address_instance = UserAddress.objects.get(id=billing_a)
+            except:
+                billing_address_instance = None
+
             card = customer.sources.create(source=token)
+            card.address_city = billing_address_instance.city or None
+            card.address_country = billing_address_instance.country or None
+            card.address_line1 = billing_address_instance.address or None
+            card.address_line2 = billing_address_instance.address2 or None
+            card.address_state = billing_address_instance.state or None
+            card.address_zip = billing_address_instance.zipcode or None
+            card.save()
+
             charge = stripe.Charge.create(
                 amount=int(final_amount * 100),
                 currency="usd",
@@ -94,6 +114,8 @@ def checkout(request):
             print charge
             if charge['captured']:
                 new_order.status = 'Finished'
+                new_order.shipping_address = shipping_address_instance
+                new_order.billing_address = billing_address_instance
                 new_order.save()
                 # cart.delete()
                 del request.session['cart_id']
