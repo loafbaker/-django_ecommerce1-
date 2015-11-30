@@ -148,3 +148,5 @@ Ver.70	[Order Total](../../tree/f412fd8eef27f36646d232dcf31b912b34f0cf72)
 Ver.71	[Minor Refactoring for User Model](../../tree/df60e28cf6d912a16fec023857ed625384bfd0ce)
 
 Ver.72	[Calculating Accurate Order Total](../../tree/30c488001921cb1e11c784e58cd43f847d454459)
+
+Ver.73	[Add Billing & Shipping to Stripe & Order](../../tree/4b755998adf74a257bf7406ecc94db41958c72c4)

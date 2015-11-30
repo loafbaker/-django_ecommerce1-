@@ -26,8 +26,8 @@ class Order(models.Model):
     cart = models.ForeignKey(Cart)
     status = models.CharField(max_length=120, choices=STATUS_CHOICES, default='Started')
     # add address
-    shipping_address = models.ForeignKey(UserAddress, related_name='shipping_address')
-    billing_address = models.ForeignKey(UserAddress, related_name='billing_address')
+    shipping_address = models.ForeignKey(UserAddress, related_name='shipping_address', blank=True, null=True)
+    billing_address = models.ForeignKey(UserAddress, related_name='billing_address', blank=True, null=True)
     sub_total = models.DecimalField(default=Decimal(str(10.99)), max_digits=1000, decimal_places=2) # Python 2.6 do not support Decimal
     tax_total = models.DecimalField(default=Decimal(str(0.99)), max_digits=1000, decimal_places=2)
     final_total = models.DecimalField(default=Decimal(str(10.99)), max_digits=1000, decimal_places=2)
