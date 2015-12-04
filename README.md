@@ -154,3 +154,5 @@ Ver.73	[Add Billing & Shipping to Stripe & Order](../../tree/4b755998adf74a257bf
 Ver.74	[Dynamic Address](../../tree/178f23867713ab7cc85c7b1553a6cfb664c3435a)
 
 Ver.75	[Product Categories](../../tree/70e31e03f9a7037dfa49d4663d428df17e4ff633)
+
+Ver.76	[Update Variation Defaults](../../tree/e329d657ede829397e80e66ce3a40ef0ee612caa)
