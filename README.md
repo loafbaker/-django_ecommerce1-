@@ -158,3 +158,5 @@ Ver.75	[Product Categories](../../tree/70e31e03f9a7037dfa49d4663d428df17e4ff633)
 Ver.76	[Update Variation Defaults](../../tree/e329d657ede829397e80e66ce3a40ef0ee612caa)
 
 Ver.77	[Checkout: Improve UI Part 1](../../tree/b636ce486856d12bd2ccb049d876e6bf6584c791)
+
+Ver.78	[Checkout: Improve UI Part 2](../../tree/a669e50f277749be2cafb7c6ab50a162ce00f08b)
